@@ -1,0 +1,9 @@
+﻿body {
+}
+
+
+label#lblInvalidLogin{
+    display: none;
+    color: #ff0000;
+    font-weight: bold;
+}

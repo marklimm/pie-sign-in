@@ -1,0 +1,57 @@
+﻿body {
+    background: #eeeeee;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+#main {
+    width: 985px;
+    margin: auto;
+    text-align: left;
+    
+    
+    background: white;
+    background-image: url('../images/PieLogo_small_120.jpg');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position: 86% 3%;
+
+
+    padding: 13px;
+    border: solid #ddd;
+    border-width: 0 1px 1px 1px;
+}
+
+#main h1 {
+    margin-top: 0;
+    font-size: 35px;
+}
+
+#main ul {
+    padding-left: 20px;
+}
+
+#main .error {
+    border: 1px solid red;
+    background: #FDEFF0;
+    padding: 20px;
+}
+
+#main .success {
+    margin-top: 25px;
+}
+
+#main .success code {
+    font-size: 12px;
+    color: green;
+    line-height: 13px;
+}
+
+
+table{
+	margin: auto;
+}
+
+table th{
+	text-align: center;
+}

@@ -1,0 +1,351 @@
+<html >
+<head>
+  <title>Organize pods</title>
+
+
+  <link href="http://bootswatch.com/simplex/bootstrap.min.css" rel="Stylesheet">
+
+<!--
+<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+-->
+    <link rel="stylesheet" href="css/pages/admin2/style2.css">
+
+</head>
+<body >
+
+
+
+
+  <div class="row">
+    <div class="col-sm-4">
+
+
+
+
+        <h3>Pod Leaders</h3>
+            
+
+      <div style='clear: both; height: 28px;'>&nbsp;</div>
+
+      <table class="tblPodLeaders table table-striped">
+        <thead>
+          <tr>
+            <th class="colName">Name</th>
+                    <th class="colPodLeader">Pod Leader</th>
+                    <th class="colNotInPod">In Pod</th>
+          </tr>
+        </thead>
+        <tbody data-bind='foreach: podLeaders'>
+          <td class="name">
+                    <label data-bind="text: name"></label>
+          </td>
+                <td style="text-align: center;">
+
+<!--
+<button type="button" class="btn btn-sm" ng-class="person.teamLeader ? 'btn-success' : 'btn-primary'" data-toggle="button"
+      ng-click="toggleLeaderStatus(person)"
+      >
+      {{ person.teamLeader ? 'YES' : 'NO' }}
+    </button>
+-->
+
+  <button type="button" class="btn btn-sm" data-bind='
+    click: toggleLeaderStatus, 
+    text: (isPodLeader() ? "YES" : "NO"), 
+    css: { "btn-success": isPodLeader(), "btn-default" : !isPodLeader() }' 
+            data-toggle="button"
+        >
+      </button>
+
+
+<!--
+      <input type="checkbox" data-bind="checked: isPodLeader"  />
+      -->
+    </td>
+    <td style="text-align: center;">
+
+      <button type="button" class="btn btn-sm" data-bind='
+      click: toggleInPodStatus, 
+      text: (!shouldNotBeInPod() ? "YES" : "NO"), 
+      css: { "btn-success": !shouldNotBeInPod(), "btn-default" : shouldNotBeInPod() }' data-toggle="button"
+      >
+    </button>
+
+<!--
+                    <input type="checkbox" data-bind="checked: shouldNotBeInPod"  />
+                    -->
+                </td>
+        </tbody>
+      </table>
+
+
+
+
+      <div style='height: 25px; clear: both;'>&nbsp;</div>
+
+      <h3>Not in a Pod</h3>
+
+      <table id='tblNotInPod'  class="tblPodLeaders table table-striped">
+        <thead>
+          <tr>
+            <th class="colName">Name</th>
+            <th class="colPodLeader">Pod Leader</th>
+            <th class="colNotInPod">In Pod</th>
+          </tr>
+        </thead>
+        <tbody data-bind='foreach: peopleWhoShouldNotBeInAPod'>
+          <td class="name">
+            <label data-bind="text: name"></label>
+          </td>
+          <td style="text-align: center;">
+
+
+  <button type="button" class="btn btn-sm" data-bind='
+    click: toggleLeaderStatus, 
+    text: (isPodLeader() ? "YES" : "NO"), 
+    css: { "btn-success": isPodLeader(), "btn-default" : !isPodLeader() }' 
+            data-toggle="button"
+        >
+      </button>
+
+          <!--
+            <input type="checkbox" data-bind="checked: isPodLeader"  />
+            -->
+          </td>
+          <td style="text-align: center;">
+
+
+  <button type="button" class="btn btn-sm" data-bind='
+    click: toggleInPodStatus, 
+    text: (!shouldNotBeInPod() ? "YES" : "NO"), 
+    css: { "btn-success": !shouldNotBeInPod(), "btn-default" : shouldNotBeInPod() }' 
+            data-toggle="button"
+        >
+      </button>
+
+          <!--
+            <input type="checkbox" data-bind="checked: shouldNotBeInPod"  />
+            -->
+          </td>
+        </tbody>
+      </table>
+
+
+
+    </div>
+    <div class="col-sm-8">
+      
+
+        <h3>Regular People</h3>
+
+      <table id='tblRegularPeople' class="table table-striped table-condensed">
+        <thead>
+          <tr>
+            <th class="colName">Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+                    <th class="colfirstTime">First Time?</th>
+                    <th>Where from?</th>
+                    <th class="colPodLeader">Pod Leader</th>
+                    <th class="colNotInPod">In Pod</th>
+                    <th class='colWillingToDrive'>Willing to Drive</th>
+          </tr>
+        </thead>
+        <tbody data-bind='foreach: regularPeople'>
+
+          <td class="name">
+                    <label  data-bind="text: name"></label>
+        
+          </td>
+          <td>
+            <label data-bind="text: email"></label>
+          </td>
+          <td>
+            <label data-bind="text: phone"></label>
+          </td>
+          <td>
+                    <label data-bind="text: firstTime"></label>
+
+          </td>
+                <td>
+                    <label data-bind="text: whereFrom"></label>
+        
+          </td>
+                <td style="text-align: center;">
+
+
+
+  <button type="button" class="btn btn-sm" data-bind='
+    click: toggleLeaderStatus, 
+    text: (isPodLeader() ? "YES" : "NO"), 
+    css: { "btn-success": isPodLeader(), "btn-default" : !isPodLeader() }' 
+            data-toggle="button"
+        >
+      </button>
+
+
+                <!--
+                    <input type="checkbox" data-bind="checked: isPodLeader"  />
+                    -->
+                </td>
+                <td style="text-align: center;">
+
+
+
+
+  <button type="button" class="btn btn-sm" data-bind='
+    click: toggleInPodStatus, 
+    text: (!shouldNotBeInPod() ? "YES" : "NO"), 
+    css: { "btn-success": !shouldNotBeInPod(), "btn-default" : shouldNotBeInPod() }' 
+            data-toggle="button"
+        >
+      </button>
+
+                <!--
+                    <input type="checkbox" data-bind="checked: shouldNotBeInPod"  />
+                    -->
+                </td>
+                <td>
+                    <label data-bind="text: willingToDrive"></label>
+
+                </td>
+        </tbody>
+      </table>
+
+
+        <div style=" text-align: center;">
+
+
+      <button id="btnSaveToDB" type="button" class="btn btn-default btn-xs" data-bind='
+      click: saveToDBClicked' data-toggle="button"
+      >Save contacts we don't have to the database
+    </button>
+
+
+            <div id="divNumDBRecordsSaved" style="display: none; margin-top: 5px;">
+                <label data-bind="text: numDBRecordsSaved"></label> records were saved to the database
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      
+
+        <div style="height: 30px;">&nbsp;</div>
+      
+        <div style="text-align: center;">
+        There are <label data-bind="text: podLeaders().length"></label> pod leaders
+      </div>
+
+      <div style="text-align: center;">
+        There are <label data-bind="text: regularPeople().length"></label> regular people
+      </div>
+
+
+
+
+    <div style='height: 15px;'>&nbsp;</div>
+
+    <div style="text-align: center;">
+        
+
+  <button id='btnAssignPods' type="button" class="btn btn-info btn-sm" data-bind='
+    click: assignPodsClicked'
+            data-toggle="button"
+        >Create brand new Pods
+      </button>
+
+
+    </div>
+
+    <div style='height: 30px;'>&nbsp;</div>
+
+
+    <div id="divPods">
+
+        <div data-bind="foreach: pods">
+
+            <div class='podDiv'>
+                
+                At: <input type="text" class="locationTextbox" />
+
+
+                <ul class="connectedSortable" data-bind='attr: { podLeader: $data.podLeader().name}'>
+
+                    <!-- name of pod leader, ui-state-disabled -->
+                    <li class="personInPod li-podleader " data-bind="
+                        text: podLeader().name
+                        "></li>
+
+
+                    <!--
+
+                    , 
+                        style: { backgroundColor: willingToDrive === 'YES' ? '#F8E28F' : '#F9F7F4'}
+                        -->
+
+
+                    <!-- ko foreach: podMembers() -->
+                     <li class="personInPod" data-bind="
+                        text: displayName(),
+                        css: { 'li-podleader' : isPodLeader(), 'li-podmember' : !isPodLeader() }
+                        "></li>
+                    <!-- /ko -->
+                </ul>
+                    
+
+            </div>
+
+        </div>
+
+    <div style='clear: both; height: 5px;'>&nbsp;</div>
+
+
+    <h4>People not yet in a pod</h4>
+
+    <ul id='ulLatePeople' class="connectedSortable" data-bind="foreach: stragglers">
+
+    <!-- style: { backgroundColor: $data.willingToDrive === 'YES' ? '#F8E28F' : '#F9F7F4'} -->
+        <li class="personInPod" data-bind="
+            text: $data.displayName(), 
+            css: { 'li-podleader' : isPodLeader(), 'li-podmember' : !isPodLeader() }
+        "></li>
+
+    </ul>
+    
+
+    </div>
+
+
+      <div style='clear: both; height: 10px;'>&nbsp;</div>
+
+
+      <button id='btnLogout' class='btn btn-default btn-xs' data-bind='click: logoutClicked'>Log out</button>
+
+
+      <div style='clear: both; height: 10px;'>&nbsp;</div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+  <script data-main="js/pages/admin/script" src="js/lib/requireJS/require.js" ></script>
+
+
+
+</body>
+</html>

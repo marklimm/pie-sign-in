@@ -1,0 +1,78 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>PIE sign-in</title>
+  <meta name="description" content="PIE - Pizza Intercession Evangelism - Matthew 28:18-20">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/baseCSS.css">
+    <link rel="stylesheet" href="css/pages/index/styles.css">
+  
+    
+    <link href="css/bootstrap/css/custom/bootstrap-buttons.css" rel="Stylesheet" />
+  <link href="css/bootstrap/css/custom/bootstrap-popover.css" rel="Stylesheet" />
+
+</head>
+
+<body>
+  
+  <div id="main">
+    
+    <h3>If you have signed in at PIE before then you only need to fill in your name</h3>
+
+    <h4>And if you're able to drive let us know in the last column</h4>
+
+	<table id='tblHeader' cellpadding='5'>
+			<tr>
+				<th class='name'>Name</th>
+				<th class='email'>Email</th>
+				<th class='phone'>Phone Number</th>
+                <th class='firstTime'>First Time?</th>
+                <th class='campus'>MBC Campus</th>
+                <th class='willingToDrive'>Willing to drive?</th>
+			</tr>
+	</table>
+
+	<table id='tblSignIn' cellpadding='5'>
+		<tbody data-bind='foreach: signinSheetPeople'>
+			<tr >
+	            <td>
+					<input type='text' data-bind='value: name, event: { blur: nameBlur }' class='nameTxtBx' maxlength="30" />
+				</td>
+				<td>
+					<input type='text' data-bind='value: email' class='emailTxtBx' maxlength="30" />
+				</td>
+				<td>
+					<input type='text' data-bind='value: phone' class='phoneTxtBx' maxlength="16" />
+				</td>
+				<td>
+	                <select data-bind="options: $root.yesNoOptions, optionsCaption: 'Choose...', value: firstTime"></select>
+
+				</td>
+	            <td>
+	                <select data-bind="options: $root.whereFromOptions, optionsCaption: 'Choose...', value: whereFrom"></select>
+				</td>
+				<td>
+	                <select data-bind="options: $root.yesNoOptions, optionsCaption: 'Choose...', value: willingToDrive"></select>
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div style='height: 15px;'>&nbsp;</div>
+
+
+	
+    <script data-main="js/pages/index/script" src="js/lib/requireJS/require.js" ></script>
+
+      <!--
+    <script>
+        require(['js/pages/index/script.js']);
+    </script>
+    -->	
+
+</body>
+
+</html>

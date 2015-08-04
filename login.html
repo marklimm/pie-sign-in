@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+
+  <title>PIE login</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/baseCSS.css">
+
+  <link href="css/bootstrap/css/custom/bootstrap-buttons.css" rel="Stylesheet" />
+  
+    <link rel="stylesheet" href="css/pages/login/styles.css">
+
+</head>
+<body>
+
+    <div id="main">
+
+        <table cellpadding="3">
+            <tr>
+                <td>Username:</td>
+                <td>
+                    <input id="txtUsername" type='text' class='usernameTxtBx' maxlength="25" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input id="txtPassword" type="password" class='passwordTxtBx' maxlength="25" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+
+                    <button id='btnLogin' class='btn btn-primary'  data-bind='click: loginClicked'>Login</button>
+                </td>
+            </tr>
+                        <tr>
+                <td colspan="2" style="text-align: center;">
+
+                    <label id="lblInvalidLogin">Incorrect username or password</label>
+                </td>
+            </tr>
+        </table>
+
+        
+
+
+    
+      
+    
+
+    </div>
+
+	<script data-main="js/pages/login/script" src="js/lib/requireJS/require.js" ></script>
+    <!--
+    <script>
+        require(['js/pages/login/script.js']);
+    </script>
+    -->	
+</body>
+</html>
