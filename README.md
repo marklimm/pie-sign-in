@@ -6,6 +6,8 @@ My church has a monthly outreach ministry event that's typically attended by 25-
 
 As event attendees sign in on a laptop by filling in their name, email, etc. (without clicking a button), their data is sync-ed over to a separate admin view that an event host views on her iPad.  She can then place attendees into groups via drag-and-drop interface that immediately syncs every change to a real-time database (firebase)
 
+I'm definitely thankful to be able to help out by building this application.  It is still being used regularly at our monthly events.
+
 Some notable things:
 - contains 2 views - a public sign in view for attendees and an admin view for viewing attendees and drag-and-dropping them into smaller groups.  The admin view is updated in real-time as attendees sign in
 - utilizes knockout to render multiple lists of people
